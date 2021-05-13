@@ -1,0 +1,24 @@
+apiVersion: package.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: operator.educates.vmware.com.1.0.0-vmware0
+spec:
+  publicName: operator.educates.vmware.com
+  version: "1.0.0-vmware0"
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: quay.io/eduk8s/educates-operator-package:latest
+      template:
+        - ytt:
+            ignoreUnknownComments: true
+            paths:
+              - config/
+        - kbld:
+            paths:
+              - "-"
+              - .imgpkg/images.yml
+      deploy:
+        - kapp:
+            rawOptions: ["--wait-timeout=5m"]

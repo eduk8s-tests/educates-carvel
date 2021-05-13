@@ -1,0 +1,3 @@
+pushd $(pwd)/bundle
+vendir sync
+popd

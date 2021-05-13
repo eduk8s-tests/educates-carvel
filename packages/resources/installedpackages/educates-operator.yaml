@@ -1,0 +1,11 @@
+apiVersion: install.package.carvel.dev/v1alpha1
+kind: InstalledPackage
+metadata:
+  name: eduk8s-operator
+spec:
+  serviceAccountName: educates-sa
+  packageRef:
+    publicName: operator.educates.vmware.com
+    versionSelection:
+      constraints: "1.0.0-vmware0"
+      prereleases: {}

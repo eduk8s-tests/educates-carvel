@@ -1,0 +1,25 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@ def image_location(old, _):
+#@   name = old.split("/",1)[-1]
+#@   return "{0}/{1}".format(data.values.registry, name)
+#@ end
+
+#@overlay/match by=overlay.subset({"kind":"PackageRepository"}), expects="0+"
+---
+spec:
+  fetch:
+    image:
+      url:  #@overlay/replace via=image_location
+
+
+#@overlay/match by=overlay.subset({"kind":"Package"}), expects="0+"
+---
+spec:
+  template:
+    spec:
+      fetch:
+      #@overlay/match by=overlay.all,expects="0+"
+      - imgpkgBundle:
+          image: #@overlay/replace via=image_location

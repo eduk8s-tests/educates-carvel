@@ -1,0 +1,15 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+minimumRequiredVersion: 0.12.0
+directories:
+  - path: config/upstream
+    contents:
+      - path: .
+        git:
+          url: https://github.com/eduk8s/eduk8s
+          ref: 21.04.27.1
+#        newRootPath: deploy
+        includePaths:
+        - resources/crds-v1/**/*
+        - resources/operator/**/*
+        - resources/image-mappings.env

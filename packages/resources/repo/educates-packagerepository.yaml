@@ -1,0 +1,8 @@
+apiVersion: install.package.carvel.dev/v1alpha1
+kind: PackageRepository
+metadata:
+  name: educates.tanzu.vmware.com
+spec:
+  fetch:
+    image:
+      url: quay.io/eduk8s/educates-package-repository:latest

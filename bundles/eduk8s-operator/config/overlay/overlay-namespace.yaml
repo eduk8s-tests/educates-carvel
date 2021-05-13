@@ -1,0 +1,32 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@overlay/match by=overlay.subset({"kind":"Namespace", "metadata": {"name": "eduk8s"}})
+---
+metadata:
+  name: #@ data.values.namespace
+
+#@overlay/match by=overlay.subset({"metadata": {"namespace": "eduk8s"}}), expects="0+"
+---
+metadata:
+  namespace: #@ data.values.namespace
+
+#@overlay/match by=overlay.subset({"kind":"Deployment"}), expects="0+"
+---
+metadata:
+  #@overlay/match missing_ok=True
+  namespace: #@ data.values.namespace
+
+#@overlay/match by=overlay.subset({"kind":"ServiceAccount"}), expects="0+"
+---
+metadata:
+  #@overlay/match missing_ok=True
+  namespace: #@ data.values.namespace
+
+#@overlay/match by=overlay.subset({"kind":"ClusterRoleBinding"}), expects="0+"
+---
+subjects:
+#@overlay/match by="name"
+- name: eduk8s
+  #@overlay/match missing_ok=True
+  namespace: #@ data.values.namespace

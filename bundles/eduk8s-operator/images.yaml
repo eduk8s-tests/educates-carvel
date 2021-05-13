@@ -1,0 +1,7 @@
+images:
+- image: quay.io/eduk8s/eduk8s-operator:210508.025026.38e63af
+- image: quay.io/eduk8s/eduk8s-portal:210407.103855.5014095
+- image: quay.io/eduk8s/base-environment:210414.121557.03f0085
+- image: quay.io/eduk8s/jdk8-environment:210414.122653.1e9aa1a
+- image: quay.io/eduk8s/jdk11-environment:210414.122624.255a1a7
+- image: quay.io/eduk8s/conda-environment:210414.122535.32cfa4c
