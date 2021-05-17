@@ -1,0 +1,12 @@
+#@ load("@ytt:data", "data")
+
+---
+#! Docs: https://docs.eduk8s.io/en/latest/runtime-environment/system-profile.html
+apiVersion: training.eduk8s.io/v1alpha1
+kind: SystemProfile
+metadata:
+  name: default-system-profile
+spec:
+  ingress:
+    domain: #@ data.values.educates.domain
+    secret: #@ data.values.educates.wildcard_secret

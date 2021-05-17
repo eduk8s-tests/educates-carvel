@@ -2,21 +2,21 @@
 apiVersion: imgpkg.carvel.dev/v1alpha1
 images:
 - annotations:
-    kbld.carvel.dev/id: quay.io/eduk8s/base-environment:210414.121557.03f0085
-  image: quay.io/eduk8s/base-environment@sha256:687c34d258d84ba526055550d0f6f8bdeca9d7c1cdc8663a7126ab42bb989164
+    kbld.carvel.dev/id: quay.io/eduk8s/base-environment:210508.015017.4546935
+  image: quay.io/eduk8s/base-environment@sha256:0349a68f4144260d7ade51f1ed2b3b2b59f48f38cff6e0c61d2b1df0dfa68b7f
 - annotations:
-    kbld.carvel.dev/id: quay.io/eduk8s/conda-environment:210414.122535.32cfa4c
-  image: quay.io/eduk8s/conda-environment@sha256:1254b534fd6dc434de5c6f8f230b55b8b9fb22a2907f57b98b767da0bd083af4
+    kbld.carvel.dev/id: quay.io/eduk8s/conda-environment:210508.022321.98b76aa
+  image: quay.io/eduk8s/conda-environment@sha256:321d175c672d15507fcad523450f4bd2b570f77302d99480941ce77acb626fc1
 - annotations:
     kbld.carvel.dev/id: quay.io/eduk8s/eduk8s-operator:210508.025026.38e63af
   image: quay.io/eduk8s/eduk8s-operator@sha256:f27924516b0242a63c307dc939fb8ee3b161d9fc9315d98b703ef3ba54c5e4e7
 - annotations:
-    kbld.carvel.dev/id: quay.io/eduk8s/eduk8s-portal:210407.103855.5014095
-  image: quay.io/eduk8s/eduk8s-portal@sha256:10070ad1ce45ae0bbbadc021670a9021ae0b90882fc9e7eb3baffcfc3af1a255
+    kbld.carvel.dev/id: quay.io/eduk8s/eduk8s-portal:210429.013717.d89e4b8
+  image: quay.io/eduk8s/eduk8s-portal@sha256:a1be78466b1b03e808b2f8837a7d5ae7c6bada500df00d22dbc585b6cc12e138
 - annotations:
-    kbld.carvel.dev/id: quay.io/eduk8s/jdk11-environment:210414.122624.255a1a7
-  image: quay.io/eduk8s/jdk11-environment@sha256:773a2bd4fb48009ef2c3417e60f783c2f92179bd85b89b56826950ce07926e65
+    kbld.carvel.dev/id: quay.io/eduk8s/jdk11-environment:210508.022420.1da6880
+  image: quay.io/eduk8s/jdk11-environment@sha256:0333f6ea3abc8b282438bb05ccbd09b2d91583c2adb59befdfaa7538e803d02d
 - annotations:
-    kbld.carvel.dev/id: quay.io/eduk8s/jdk8-environment:210414.122653.1e9aa1a
-  image: quay.io/eduk8s/jdk8-environment@sha256:27f701fc8cc4c75d1d0b84f6a598a882b9e3164542ccb6cbda7a57ab14fd2712
+    kbld.carvel.dev/id: quay.io/eduk8s/jdk8-environment:210508.022439.0e1deca
+  image: quay.io/eduk8s/jdk8-environment@sha256:e70b455605d80d18536c3bda1c5f27e8d8f35341f279c57d2d6af5d2ce2f1e0b
 kind: ImagesLock

@@ -1,0 +1,10 @@
+#@ load("@ytt:data", "data")
+#@ load("@ytt:overlay", "overlay")
+
+#@ if data.values.deploy_trainingportal==False:
+
+#@overlay/match by=overlay.subset({"kind":"TrainingPortal"})
+#@overlay/remove
+---
+
+#@ end

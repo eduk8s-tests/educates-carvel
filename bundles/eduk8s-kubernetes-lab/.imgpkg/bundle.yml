@@ -1,0 +1,13 @@
+apiVersion: imgpkg.carvel.dev/v1alpha1
+kind: Bundle
+metadata:
+  name: lab-k8s-fundamentals
+authors:
+- name: Graham Dumpleton
+  email: gdumpleton@vmware.com
+- name: Jorge Morales
+  email: jomorales@vmware.com
+websites:
+- url: https://github.com/eduk8s-labs/lab-k8s-fundamentals
+- url: github.com/eduk8s/eduk8s
+- url: docs.edukates.io

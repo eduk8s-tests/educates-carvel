@@ -1,0 +1,7 @@
+---
+apiVersion: imgpkg.carvel.dev/v1alpha1
+images:
+- annotations:
+    kbld.carvel.dev/id: quay.io/eduk8s/base-environment:210508.015017.4546935
+  image: quay.io/eduk8s/base-environment@sha256:0349a68f4144260d7ade51f1ed2b3b2b59f48f38cff6e0c61d2b1df0dfa68b7f
+kind: ImagesLock

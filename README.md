@@ -4,7 +4,7 @@
 ## Minikube testing
 You need an anonymous/public registry in minikube
 
-### Create the package
+### Create the package for the operator
 
 ```
 cd bundles/eduk8s-operator
@@ -17,6 +17,23 @@ kbld -f images.yaml --imgpkg-lock-output .imgpkg/images.yml
 
 # Push the new bundle to the registry
 imgpkg push --bundle registry.minikube.failk8s.com/eduk8s/educates-operator-package:latest --file .
+
+cd -
+```
+
+### Create the package for the lab k8s fundamentals
+
+```
+cd bundles/eduk8s-kubernetes-lab
+
+# Update upstream. If you want a new version, edit vendir.yml
+vendir sync
+
+# If there's changes. Update the images file
+kbld -f images.yaml --imgpkg-lock-output .imgpkg/images.yml
+
+# Push the new bundle to the registry
+imgpkg push --bundle registry.minikube.failk8s.com/eduk8s/educates-labk8sfundamentals-package:latest --file .
 
 cd -
 ```
@@ -34,7 +51,7 @@ cd packages
 # Edit your registry name in values.yaml. Mine is registry.minikybe.failk8s.com
 
 # Create the bundle for the packagerepository and packages. The image needs a directory packages with the packages.yaml in it.
-ytt -f values.yaml -f overlay -f resources | imgpkg push -i registry.minikube.failk8s.com/eduk8s/educates-package-repository:latest -f -
+ytt -f values.yaml -f overlay -f resources/packages | imgpkg push -i registry.minikube.failk8s.com/eduk8s/educates-package-repository:latest -f -
 
 
 # Create the package registry in the cluster
@@ -45,6 +62,7 @@ ytt -f values.yaml -f overlay -f resources/repo | kubectl apply -f -
 kubectl create ns eduk8s-ctrl
 kubectl apply -f resources/installedpackages/rbac.yaml -n eduk8s-ctrl
 kubectl apply -f resources/installedpackages/educates-operator.yaml -n eduk8s-ctrl
+kubectl apply -f resources/installedpackages/educates-labk8sfundamentals.yaml -n eduk8s-ctrl
 
 cd -
 ```

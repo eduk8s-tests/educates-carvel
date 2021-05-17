@@ -1,3 +1,8 @@
 #@data/values
 ---
-namespace: educates
+namespace: eduk8s
+
+educates:
+  domain: apps.minikube.failk8s.com
+  wildcard_secret: wildcard
+

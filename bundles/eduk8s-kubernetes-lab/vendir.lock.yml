@@ -1,0 +1,9 @@
+apiVersion: vendir.k14s.io/v1alpha1
+directories:
+- contents:
+  - git:
+      commitTitle: Update workshop base image to version 210508.015017.4546935.
+      sha: e6cce707d9518b84b94790abc9e60c02bc4501d0
+    path: .
+  path: config/upstream
+kind: LockConfig

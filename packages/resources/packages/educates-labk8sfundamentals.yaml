@@ -1,0 +1,24 @@
+apiVersion: package.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: k8sfundamentals.labs.educates.vmware.com.1.0.0-vmware0
+spec:
+  publicName: k8sfundamentals.labs.educates.vmware.com
+  version: "1.0.0-vmware0"
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: quay.io/eduk8s/educates-labk8sfundamentals-package:latest
+      template:
+        - ytt:
+            ignoreUnknownComments: true
+            paths:
+              - config/
+        - kbld:
+            paths:
+              - "-"
+              - .imgpkg/images.yml
+      deploy:
+        - kapp:
+            rawOptions: ["--wait-timeout=5m"]
